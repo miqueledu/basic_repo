@@ -1,0 +1,90 @@
+
+edumi@LAPTOP-AFMRORIG MINGW64 ~/Desktop  -----> //acá cree una nueva carpeta para ingresar archivos.
+$ mkdir trabajo_core2
+
+edumi@LAPTOP-AFMRORIG MINGW64 ~/Desktop   ------>// ingreso a la carpeta creada
+$ cd trabajo_core2
+
+edumi@LAPTOP-AFMRORIG MINGW64 ~/Desktop/trabajo_core2  ------>//creación de un archivo de texto
+$ touch texto.txt
+
+edumi@LAPTOP-AFMRORIG MINGW64 ~/Desktop/trabajo_core2  ------> // creacion de un repositorio git
+$ git init
+Initialized empty Git repository in C:/Users/edumi/Desktop/trabajo_core2/.git/
+
+edumi@LAPTOP-AFMRORIG MINGW64 ~/Desktop/trabajo_core2 (master)   ------>// creacion de un segundo archivo 
+$ touch texto2.txt
+
+edumi@LAPTOP-AFMRORIG MINGW64 ~/Desktop/trabajo_core2 (master)  ------>// modificacion de archivo 
+$ nano texto.txt
+
+edumi@LAPTOP-AFMRORIG MINGW64 ~/Desktop/trabajo_core2 (master)  ------> // modificacion de archivo 
+$ nano texto2.txt
+
+edumi@LAPTOP-AFMRORIG MINGW64 ~/Desktop/trabajo_core2 (master)   ------>// agregando archivos al area de staging
+$ git add .
+warning: LF will be replaced by CRLF in texto.txt.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in texto2.txt.
+The file will have its original line endings in your working directory
+
+edumi@LAPTOP-AFMRORIG MINGW64 ~/Desktop/trabajo_core2 (master)  ------>//error al escribir comando commit
+$ git commit -m ("este es el commit para dojo")
+bash: syntax error near unexpected token `('
+
+edumi@LAPTOP-AFMRORIG MINGW64 ~/Desktop/trabajo_core2 (master)  ------>//creacion de un commit para una "captura" de los cambios realizados
+$ git commit -m "este es el commit para dojo"
+[master (root-commit) a224e26] este es el commit para dojo
+ 2 files changed, 2 insertions(+)
+ create mode 100644 texto.txt
+ create mode 100644 texto2.txt
+
+edumi@LAPTOP-AFMRORIG MINGW64 ~/Desktop/trabajo_core2 (master)  ------>// cambio de nombre a la rama master 
+$ git branch -M main
+
+edumi@LAPTOP-AFMRORIG MINGW64 ~/Desktop/trabajo_core2 (main)         ------>// configurando interfaz remota 
+$ git remote add origin https://github.com/miqueledu/basic_repo.git
+
+edumi@LAPTOP-AFMRORIG MINGW64 ~/Desktop/trabajo_core2 (main)        ------>// subiendo archivos a interfaz remota
+$ git push -u origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 313 bytes | 313.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/miqueledu/basic_repo.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+edumi@LAPTOP-AFMRORIG MINGW64 ~/Desktop/trabajo_core2 (main)  ------>// creacion de un nuevo archivo para realizar mas cambios en el repositorio
+$ touch texto3.txt
+
+edumi@LAPTOP-AFMRORIG MINGW64 ~/Desktop/trabajo_core2 (main)  ------>// modificacion de archivo nuevo
+$ nano texto3.txt
+
+edumi@LAPTOP-AFMRORIG MINGW64 ~/Desktop/trabajo_core2 (main) ------>//agregando nuevo archivo al area de staging
+$ git add .
+warning: LF will be replaced by CRLF in texto3.txt.
+The file will have its original line endings in your working directory
+
+edumi@LAPTOP-AFMRORIG MINGW64 ~/Desktop/trabajo_core2 (main)   ------>//confirmando los cambios realizados con un nuevo commit
+$ git commit -m "este es el commit de algunos cambios mas"
+[main 38a15d9] este es el commit de algunos cambios mas
+ 1 file changed, 1 insertion(+)
+ create mode 100644 texto3.txt
+
+edumi@LAPTOP-AFMRORIG MINGW64 ~/Desktop/trabajo_core2 (main) ------> // subiendo el ultimo archivo al repositorio remoto
+$ git push -u origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 367 bytes | 183.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/miqueledu/basic_repo.git
+   a224e26..38a15d9  main -> main
+branch 'main' set up to track 'origin/main'.
+
+
+//luego de todo lo anterior se procedio a revisar si los cambios realizados en repositorio remoto fueron efectivos, confirmando que el trabajo estuviera bien hecho.
